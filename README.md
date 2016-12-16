@@ -40,7 +40,6 @@ docker run -it --rm --name my-cool-container my-cool-image
 Current Packages
 ----------------
 
-        apt-utils
         ca-certificates
         curl
         g++
