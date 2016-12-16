@@ -1,0 +1,32 @@
+#!/bin/bash
+# See https://github.com/rossf7/label-schema-automated-build
+#     or https://medium.com/microscaling-systems/labelling-automated-builds-on-docker-hub-f3d073fb8e1#.wgkzfdnfr
+#     for more details.
+
+# $IMAGE_NAME var is injected into the build so the tag is correct.
+
+set -o verbose
+set -o pipefail
+set -o errexit
+set -x
+
+d_repo='sourceryinstitute/docker-base'
+d_git_remotes=($(git remote show))
+echo "${#d_git_remotes[@]} git remotes found."
+n_remotes=${#d_git_remotes[@]}
+if (( n_remotes > 0 )) ; then
+    echo "Using remote: ${d_git_remotes[0]}"
+    d_vcs_url="$(git remote -v | awk 'FNR == 1 {print $2}')"
+fi
+
+if [[ -z "${d_vcs_url:-}" ]]; then
+    d_vcs_url="https://github.com/${DOCKER_REPO:-${d_repo}}"
+fi
+
+d_vcs_describe="$(git describe)" || true
+
+echo "Build hook running"
+docker build --build-arg BUILD_DATE="$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
+             --build-arg VCS_REF="${SOURCE_COMMIT:-$(git rev-parse --short HEAD)}" \
+             --build-arg VCS_URL="${d_vcs_url}" \
+             -t "${IMAGE_NAME:-${d_repo}:latest}" .
