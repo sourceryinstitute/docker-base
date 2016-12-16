@@ -53,7 +53,7 @@ Current Packages
 
 ---
 
-[![GitHub followers](https://img.shields.io/github/followers/zbeekman.svg?style=social&label=Follow)](https://github.com/zbeekman)
+[![GitHub followers](https://img.shields.io/github/followers/sourceryinstitute.svg?style=social&label=Follow)](https://github.com/sourceryinstitute)
 [![Twitter Follow](https://img.shields.io/twitter/follow/zbeekman.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=zbeekman)
 
 [Dockerfile reference]: https://docs.docker.com/engine/reference/builder/
