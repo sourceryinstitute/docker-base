@@ -1,5 +1,5 @@
-:sparkles: :whale2: docker-base :ship: :sparkles:
-=================================================
+✨ 🐋 docker-base 🚢 ✨
+========================
 
 [![layers](https://images.microbadger.com/badges/image/sourceryinstitute/docker-base.svg)](https://hub.docker.com/r/sourceryinstitute/docker-base/)
 [![commit](https://images.microbadger.com/badges/commit/sourceryinstitute/docker-base.svg)](https://hub.docker.com/r/sourceryinstitute/docker-base)
