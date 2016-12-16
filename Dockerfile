@@ -11,9 +11,7 @@ RUN  DEBIAN_FRONTEND=noninteractive \
      && cat /NOTICE \
      && apt-get update \
      && apt-get install --no-install-recommends --no-install-suggests -y \
-        apt-utils \
         ca-certificates \
-        curl \
         g++ \
         gcc \
         gfortran \
@@ -22,6 +20,7 @@ RUN  DEBIAN_FRONTEND=noninteractive \
         make \
         openssh-client \
         wget \
+     && gcc --version \
      && apt-get autoremove \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/* /var/log/* /tmp/* \
