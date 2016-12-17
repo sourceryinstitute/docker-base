@@ -38,6 +38,7 @@ RUN  DEBIAN_FRONTEND=noninteractive \
     ARG BUILD_DATE
     ARG VCS_REF
     ARG VCS_URL
+    ARG VCS_VERSION=1.0
     LABEL org.label-schema.schema-version="1.0" \
           org.label-schema.build-date="$BUILD_DATE" \
 	  org.label-schema.version="1.0" \
