@@ -47,7 +47,7 @@ RUN  DEBIAN_FRONTEND=noninteractive \
           org.label-schema.vcs-ref="$VCS_REF" \
           org.label-schema.vcs-url="$VCS_URL" \
           org.label-schema.vendor="Sourcery Institute" \
-          org.label-schema.license="BSD-3" \
+          org.label-schema.license="BSD-3-Clause" \
           org.label-schema.docker.cmd="docker run -v $(pwd):/workdir -i -t sourceryinstitute/docker-base:latest"
 
 ENTRYPOINT ["/bin/bash"]
