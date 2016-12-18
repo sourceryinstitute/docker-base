@@ -10,6 +10,7 @@ set -o pipefail
 set -o errexit
 set -x
 
+git fetch --all --depth=9999999 --update-shallow --tags
 d_repo='sourceryinstitute/docker-base'
 d_git_remotes=($(git remote show))
 echo "${#d_git_remotes[@]} git remotes found."
