@@ -24,7 +24,7 @@ if [[ -z "${d_vcs_url:-}" ]]; then
     d_vcs_url="https://github.com/${DOCKER_REPO:-${d_repo}}"
 fi
 
-d_vcs_describe="$(git describe)" || true
+d_vcs_describe="$(git describe || true)"
 
 echo "Build hook running"
 docker build --build-arg BUILD_DATE="$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
