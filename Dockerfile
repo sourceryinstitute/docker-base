@@ -2,7 +2,7 @@ FROM debian:testing-slim
 
 MAINTAINER Izaak "Zaak" Beekman <contact@izaakbeekman.com>
 
-ENV REFRESHED_AT 2016-12-07
+ENV REFRESHED_AT 2016-12-20
 COPY LICENSE /NOTICE
 
 RUN  DEBIAN_FRONTEND=noninteractive \
@@ -12,6 +12,7 @@ RUN  DEBIAN_FRONTEND=noninteractive \
      && apt-get update \
      && apt-get install --no-install-recommends --no-install-suggests -y \
         ca-certificates \
+	cmake \
         g++ \
         gcc \
         gfortran \
@@ -38,10 +39,10 @@ RUN  DEBIAN_FRONTEND=noninteractive \
     ARG BUILD_DATE
     ARG VCS_REF
     ARG VCS_URL
-    ARG VCS_VERSION=1.0
+    ARG VCS_VERSION=latest
     LABEL org.label-schema.schema-version="1.0" \
           org.label-schema.build-date="$BUILD_DATE" \
-	  org.label-schema.version="1.0" \
+	  org.label-schema.version="$VCS_VERSION" \
           org.label-schema.name="docker-base" \
           org.label-schema.description="Lightweight base image for gcc, mpich and opencoarrays" \
           org.label-schema.url="https://github.com/sourceryinstitute/docker-base/" \
