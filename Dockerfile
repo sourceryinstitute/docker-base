@@ -20,12 +20,17 @@ RUN  DEBIAN_FRONTEND=noninteractive \
         libtool \
         make \
         openssh-client \
+        sudo \
         wget \
      && gcc --version \
      && apt-get autoremove \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/* /var/log/* /tmp/* \
      && echo '[ ! -z "$TERM" -a -r /etc/motd ] && cat /etc/issue | echo -n && cat /etc/motd && cat /NOTICE' >> /etc/bash.bashrc \
+     && useradd -ms /bin/bash sourcerer \
+     && passwd -d sourcerer \
+     && usermod -aG sudo sourcerer \
+     && (su sourcerer && whoami) \
      && printf "\
          sourceryinstitute/docker-base  Copyright (C) 2016 Sourcery Institute \n\
          This program comes with ABSOLUTELY NO WARRANTY.\n\
