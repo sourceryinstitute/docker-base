@@ -1,3 +1,4 @@
+
 ✨ 🐋 docker-base 🚢 ✨
 ========================
 
@@ -41,6 +42,7 @@ Current Packages
 ----------------
 
         ca-certificates
+        cmake
         curl
         g++
         gcc
@@ -49,6 +51,7 @@ Current Packages
         libtool
         make
         openssh-client
+        sudo
         wget
 
 ---
