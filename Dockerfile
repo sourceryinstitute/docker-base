@@ -30,7 +30,7 @@ RUN  DEBIAN_FRONTEND=noninteractive \
      && useradd -ms /bin/bash sourcerer \
      && passwd -d sourcerer \
      && usermod -aG sudo sourcerer \
-     && (su sourcerer && whoami) \
+     && (su -c whoami sourcerer) \
      && printf "\
          sourceryinstitute/docker-base  Copyright (C) 2016 Sourcery Institute \n\
          This program comes with ABSOLUTELY NO WARRANTY.\n\
