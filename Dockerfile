@@ -12,7 +12,7 @@ RUN  DEBIAN_FRONTEND=noninteractive \
      && apt-get update \
      && apt-get install --no-install-recommends --no-install-suggests -y \
         ca-certificates \
-	cmake \
+        cmake \
         g++ \
         gcc \
         gfortran \
@@ -20,6 +20,8 @@ RUN  DEBIAN_FRONTEND=noninteractive \
         libtool \
         make \
         openssh-client \
+        python \
+        python-pip \
         sudo \
         wget \
      && gcc --version \
